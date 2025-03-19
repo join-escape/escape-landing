@@ -1,246 +1,358 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Escape org - Break conventional boundaries</title>
-  <meta
-    name="description"
-    content="On a mission to Escape the ordinary. We remove the friction between ideas and reality."
-  />
-  <meta
-    name="keywords"
-    content="joinescape, escape, escapeorg, open source, notion-to-md, souvikinator"
-  />
-  <meta property="og:title" content="Escape org" />
-  <meta
-    property="og:description"
-    content="On a mission to Escape the ordinary. We remove the friction between ideas and reality."
-  />
-  <meta property="og:url" content="https://joinescape.org" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Escape Org" />
-  <meta
-    name="twitter:description"
-    content="On a mission to Escape the ordinary. We remove the friction between ideas and reality."
-  />
-  <link rel="canonical" href="https://joinescape.org" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="apple-touch-icon" sizes="180x180" href="static/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png">
-  <link rel="manifest" href="static/favicons/site.webmanifest">
-  <link rel="mask-icon" href="static/favicons/safari-pinned-tab.svg" color="#d9a45b">
-  <meta name="msapplication-TileColor" content="#2b2820">
-  <meta name="theme-color" content="#2b2820">
-</head>
-<body>
-  <div class="background-effect" id="background-effect" aria-hidden="true"></div>
-  
-  <!-- Interactive Escape Key Modal -->
-  <div class="escape-modal" id="escape-modal">
-    <a href="https://github.com/join-escape" class="escape-link" target="_blank" rel="noopener">
-      <span class="chromatic-text">Join Escape</span>
-      <svg class="external-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-        <polyline points="15 3 21 3 21 9"></polyline>
-        <line x1="10" y1="14" x2="21" y2="3"></line>
-      </svg>
-    </a>
-  </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Escape org - Break conventional boundaries</title>
+        <meta
+            name="description"
+            content="On a mission to Escape the ordinary. We remove the friction between ideas and reality."
+        />
+        <meta
+            name="keywords"
+            content="joinescape, escape, escapeorg, open source, notion-to-md, souvikinator"
+        />
+        <meta property="og:title" content="Escape org" />
+        <meta
+            property="og:description"
+            content="On a mission to Escape the ordinary. We remove the friction between ideas and reality."
+        />
+        <meta property="og:url" content="https://joinescape.org" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Escape Org" />
+        <meta
+            name="twitter:description"
+            content="On a mission to Escape the ordinary. We remove the friction between ideas and reality."
+        />
+        <link rel="canonical" href="https://joinescape.org" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="static/favicons/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="static/favicons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="static/favicons/favicon-16x16.png"
+        />
+        <link rel="manifest" href="static/favicons/site.webmanifest" />
+        <link
+            rel="mask-icon"
+            href="static/favicons/safari-pinned-tab.svg"
+            color="#d9a45b"
+        />
+        <meta name="msapplication-TileColor" content="#2b2820" />
+        <meta name="theme-color" content="#2b2820" />
+    </head>
+    <body>
+        <div
+            class="background-effect"
+            id="background-effect"
+            aria-hidden="true"
+        ></div>
 
-  <div class="container">
-    <header>
-      <div class="logo-container">
-        <!-- Interactive Escape Key -->
-        <div class="escape-key" id="escape-key" tabindex="0" role="button" aria-label="Press Escape key">
-          <svg width="89" height="72" viewBox="0 0 89 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10.9706" y="0.5" width="67.0588" height="56.5882" rx="3.5" stroke="#FFC98E"/>
-            <rect x="0.5" y="0.5" width="88" height="70.549" rx="4.5" stroke="#FFC98E"/>
-            <line x1="12.0163" y1="55.7533" x2="2.15271" y2="69.6382" stroke="#FFC98E"/>
-            <line y1="-0.5" x2="17.451" y2="-0.5" transform="matrix(0.6 0.8 0.8 -0.6 77.6189 54.098)" stroke="#FFC98E"/>
-            <path d="M22.1606 43.3768V31.7404H29.1833V32.9904H23.5697V36.9223H28.8197V38.1723H23.5697V42.1268H29.2742V43.3768H22.1606ZM37.7231 36.6041L36.5185 36.945C36.4428 36.7442 36.331 36.5492 36.1833 36.3598C36.0394 36.1666 35.8424 36.0075 35.5924 35.8825C35.3424 35.7575 35.0223 35.695 34.6322 35.695C34.0981 35.695 33.653 35.8181 33.2969 36.0643C32.9447 36.3067 32.7685 36.6154 32.7685 36.9904C32.7685 37.3238 32.8897 37.587 33.1322 37.7802C33.3746 37.9734 33.7534 38.1344 34.2685 38.2632L35.564 38.5814C36.3443 38.7707 36.9257 39.0605 37.3083 39.4507C37.6909 39.837 37.8822 40.3351 37.8822 40.945C37.8822 41.445 37.7382 41.892 37.4503 42.2859C37.1662 42.6798 36.7685 42.9904 36.2572 43.2177C35.7458 43.445 35.1511 43.5586 34.4731 43.5586C33.5829 43.5586 32.8462 43.3654 32.2628 42.9791C31.6795 42.5927 31.3102 42.0283 31.1549 41.2859L32.4276 40.9677C32.5488 41.4374 32.778 41.7897 33.1151 42.0245C33.456 42.2594 33.9011 42.3768 34.4503 42.3768C35.0753 42.3768 35.5715 42.2442 35.939 41.9791C36.3102 41.7101 36.4958 41.3882 36.4958 41.0132C36.4958 40.7101 36.3897 40.4564 36.1776 40.2518C35.9655 40.0435 35.6397 39.8882 35.2003 39.7859L33.7458 39.445C32.9465 39.2556 32.3594 38.962 31.9844 38.5643C31.6132 38.1628 31.4276 37.6609 31.4276 37.0586C31.4276 36.5662 31.5659 36.1306 31.8424 35.7518C32.1227 35.373 32.5034 35.0757 32.9844 34.8598C33.4693 34.6439 34.0185 34.5359 34.6322 34.5359C35.4958 34.5359 36.1738 34.7253 36.6662 35.1041C37.1625 35.4829 37.5147 35.9829 37.7231 36.6041ZM43.4461 43.5586C42.6279 43.5586 41.9233 43.3654 41.3324 42.9791C40.7415 42.5927 40.287 42.0605 39.9688 41.3825C39.6506 40.7045 39.4915 39.9298 39.4915 39.0586C39.4915 38.1723 39.6544 37.3901 39.9802 36.712C40.3097 36.0302 40.768 35.498 41.3552 35.1154C41.9461 34.7291 42.6355 34.5359 43.4233 34.5359C44.037 34.5359 44.59 34.6495 45.0824 34.8768C45.5749 35.1041 45.9783 35.4223 46.2927 35.8314C46.6071 36.2404 46.8021 36.7177 46.8779 37.2632H45.537C45.4347 36.8654 45.2074 36.5132 44.8552 36.2064C44.5067 35.8957 44.037 35.7404 43.4461 35.7404C42.9233 35.7404 42.465 35.8768 42.0711 36.1495C41.6809 36.4185 41.376 36.7992 41.1563 37.2916C40.9404 37.7802 40.8324 38.3541 40.8324 39.0132C40.8324 39.6874 40.9385 40.2745 41.1506 40.7745C41.3665 41.2745 41.6696 41.6628 42.0597 41.9393C42.4537 42.2158 42.9158 42.3541 43.4461 42.3541C43.7946 42.3541 44.1108 42.2935 44.3949 42.1723C44.679 42.0511 44.9196 41.8768 45.1165 41.6495C45.3135 41.4223 45.4537 41.1495 45.537 40.8314H46.8779C46.8021 41.3465 46.6146 41.8105 46.3154 42.2234C46.0199 42.6325 45.6279 42.9582 45.1393 43.2007C44.6544 43.4393 44.09 43.5586 43.4461 43.5586Z" fill="#FFC98E"/>
-          </svg>
-        </div>
-        <h1 class="logo-text">Escape</h1>
-      </div>
-
-      <div class="social-links">
-        <a
-          href="https://github.com/join-escape?utm_source=joinescape.org&utm_medium=website&utm_campaign=nav_links"
-          target="_blank"
-          rel="noopener"
-          aria-label="GitHub"
-        >
-          <svg
-            class="social-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-            ></path>
-          </svg>
-          GitHub
-        </a>
-        <a
-          href="https://twitter.com/souvikinator"
-          target="_blank"
-          rel="noopener"
-          aria-label="Twitter"
-        >
-          <svg
-            class="social-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
-            ></path>
-          </svg>
-          Twitter
-        </a>
-      </div>
-    </header>
-
-    <main>
-      <h2 class="headline">On a mission to Escape the ordinary</h2>
-      <p class="subheadline">
-        We are builders, we make sh*t happen - removing the friction between
-        ideas and reality.
-      </p>
-
-      <h3 class="work-heading">Our work</h3>
-
-      <div class="projects">
-        <a
-          href="https://docs.joinescape.org/notion-to-md?utm_source=joinescape.org&utm_medium=website&utm_campaign=our_work"
-          class="project-card"
-          aria-label="Notion to Markdown Converter - Seamlessly convert Notion pages to Markdown and other formats"
-        >
-          <div>
-            <h4>Notion-to-md (Notion to anything)</h4>
-            <p>
-              Powerful Notion conversion engine that lets you write once in
-              Notion and seamlessly publish anywhere, in any format
-              (MD,MDX,JSX,PPT,HTML,LaTeX,etc)
-            </p>
-          </div>
-          <div class="card-footer">
-            <svg
-              class="external-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path
-                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-              ></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </div>
-        </a>
-        <a
-          href="https://github.com/join-escape/exporto-playground?utm_source=joinescape.org&utm_medium=website&utm_campaign=our_work"
-          class="project-card"
-          aria-label="Exporto Playground - Convert Notion pages to various formats with ease"
-        >
-          <div>
-            <h4>Exporto Playground</h4>
-            <p>
-              A user-friendly interface for exporting Notion pages to various
-              formats and to various destinations.
-            </p>
-          </div>
-          <div class="card-footer">
-            <svg
-              class="external-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path
-                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-              ></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </div>
-        </a>
-      </div>
-
-      <section class="team-section">
-        <h2>Team</h2>
-        <div class="team-list">
-          <div class="team-member">
+        <!-- Interactive Escape Key Modal -->
+        <div class="escape-modal" id="escape-modal">
             <a
-              href="https://github.com/souvikinator?utm_source=joinescape.org&utm_medium=website&utm_campaign=team"
-              target="_blank"
-              rel="noopener"
+                href="https://github.com/join-escape"
+                class="escape-link"
+                target="_blank"
+                rel="noopener"
             >
-              @souvikinator
-              <svg
-                class="external-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path
-                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                ></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
+                <span class="chromatic-text">Join Escape</span>
+                <svg
+                    class="external-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    ></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
             </a>
-          </div>
-          <div class="team-member">
-            <p>and all the open source contributors 💪</p>
-          </div>
         </div>
-      </section>
-    </main>
 
-    <footer>
-      <p>&copy; 2025 JoinEscape.org</p>
-    </footer>
-  </div>
+        <div class="container">
+            <header>
+                <div class="logo-container">
+                    <!-- Interactive Escape Key -->
+                    <div
+                        class="escape-key"
+                        id="escape-key"
+                        tabindex="0"
+                        role="button"
+                        aria-label="Press Escape key"
+                    >
+                        <svg
+                            width="89"
+                            height="72"
+                            viewBox="0 0 89 72"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <rect
+                                x="10.9706"
+                                y="0.5"
+                                width="67.0588"
+                                height="56.5882"
+                                rx="3.5"
+                                stroke="#FFC98E"
+                            />
+                            <rect
+                                x="0.5"
+                                y="0.5"
+                                width="88"
+                                height="70.549"
+                                rx="4.5"
+                                stroke="#FFC98E"
+                            />
+                            <line
+                                x1="12.0163"
+                                y1="55.7533"
+                                x2="2.15271"
+                                y2="69.6382"
+                                stroke="#FFC98E"
+                            />
+                            <line
+                                y1="-0.5"
+                                x2="17.451"
+                                y2="-0.5"
+                                transform="matrix(0.6 0.8 0.8 -0.6 77.6189 54.098)"
+                                stroke="#FFC98E"
+                            />
+                            <path
+                                d="M22.1606 43.3768V31.7404H29.1833V32.9904H23.5697V36.9223H28.8197V38.1723H23.5697V42.1268H29.2742V43.3768H22.1606ZM37.7231 36.6041L36.5185 36.945C36.4428 36.7442 36.331 36.5492 36.1833 36.3598C36.0394 36.1666 35.8424 36.0075 35.5924 35.8825C35.3424 35.7575 35.0223 35.695 34.6322 35.695C34.0981 35.695 33.653 35.8181 33.2969 36.0643C32.9447 36.3067 32.7685 36.6154 32.7685 36.9904C32.7685 37.3238 32.8897 37.587 33.1322 37.7802C33.3746 37.9734 33.7534 38.1344 34.2685 38.2632L35.564 38.5814C36.3443 38.7707 36.9257 39.0605 37.3083 39.4507C37.6909 39.837 37.8822 40.3351 37.8822 40.945C37.8822 41.445 37.7382 41.892 37.4503 42.2859C37.1662 42.6798 36.7685 42.9904 36.2572 43.2177C35.7458 43.445 35.1511 43.5586 34.4731 43.5586C33.5829 43.5586 32.8462 43.3654 32.2628 42.9791C31.6795 42.5927 31.3102 42.0283 31.1549 41.2859L32.4276 40.9677C32.5488 41.4374 32.778 41.7897 33.1151 42.0245C33.456 42.2594 33.9011 42.3768 34.4503 42.3768C35.0753 42.3768 35.5715 42.2442 35.939 41.9791C36.3102 41.7101 36.4958 41.3882 36.4958 41.0132C36.4958 40.7101 36.3897 40.4564 36.1776 40.2518C35.9655 40.0435 35.6397 39.8882 35.2003 39.7859L33.7458 39.445C32.9465 39.2556 32.3594 38.962 31.9844 38.5643C31.6132 38.1628 31.4276 37.6609 31.4276 37.0586C31.4276 36.5662 31.5659 36.1306 31.8424 35.7518C32.1227 35.373 32.5034 35.0757 32.9844 34.8598C33.4693 34.6439 34.0185 34.5359 34.6322 34.5359C35.4958 34.5359 36.1738 34.7253 36.6662 35.1041C37.1625 35.4829 37.5147 35.9829 37.7231 36.6041ZM43.4461 43.5586C42.6279 43.5586 41.9233 43.3654 41.3324 42.9791C40.7415 42.5927 40.287 42.0605 39.9688 41.3825C39.6506 40.7045 39.4915 39.9298 39.4915 39.0586C39.4915 38.1723 39.6544 37.3901 39.9802 36.712C40.3097 36.0302 40.768 35.498 41.3552 35.1154C41.9461 34.7291 42.6355 34.5359 43.4233 34.5359C44.037 34.5359 44.59 34.6495 45.0824 34.8768C45.5749 35.1041 45.9783 35.4223 46.2927 35.8314C46.6071 36.2404 46.8021 36.7177 46.8779 37.2632H45.537C45.4347 36.8654 45.2074 36.5132 44.8552 36.2064C44.5067 35.8957 44.037 35.7404 43.4461 35.7404C42.9233 35.7404 42.465 35.8768 42.0711 36.1495C41.6809 36.4185 41.376 36.7992 41.1563 37.2916C40.9404 37.7802 40.8324 38.3541 40.8324 39.0132C40.8324 39.6874 40.9385 40.2745 41.1506 40.7745C41.3665 41.2745 41.6696 41.6628 42.0597 41.9393C42.4537 42.2158 42.9158 42.3541 43.4461 42.3541C43.7946 42.3541 44.1108 42.2935 44.3949 42.1723C44.679 42.0511 44.9196 41.8768 45.1165 41.6495C45.3135 41.4223 45.4537 41.1495 45.537 40.8314H46.8779C46.8021 41.3465 46.6146 41.8105 46.3154 42.2234C46.0199 42.6325 45.6279 42.9582 45.1393 43.2007C44.6544 43.4393 44.09 43.5586 43.4461 43.5586Z"
+                                fill="#FFC98E"
+                            />
+                        </svg>
+                    </div>
+                    <h1 class="logo-text">Escape</h1>
+                </div>
 
-  <script src="script.js"></script>
-</body>
+                <div class="social-links">
+                    <a
+                        href="https://github.com/join-escape?utm_source=joinescape.org&utm_medium=website&utm_campaign=nav_links"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="GitHub"
+                    >
+                        <svg
+                            class="social-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                            ></path>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a
+                        href="https://twitter.com/souvikinator"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Twitter"
+                    >
+                        <svg
+                            class="social-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+                            ></path>
+                        </svg>
+                        Twitter
+                    </a>
+                    <a
+                        href="https://docs.joinescape.org"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Documentations"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                        >
+                            <g fill="none" fill-rule="evenodd">
+                                <path
+                                    d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+                                />
+                                <path
+                                    fill="currentColor"
+                                    d="M4 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm14 0H6v16h12zM8 9a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H9a1 1 0 0 1-1-1m1 4a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z"
+                                />
+                            </g>
+                        </svg>
+                        Docs
+                    </a>
+                </div>
+            </header>
+
+            <main>
+                <h2 class="headline">On a mission to Escape the ordinary</h2>
+                <p class="subheadline">
+                    We are builders, we make sh*t happen - removing the friction
+                    between ideas and reality.
+                </p>
+
+                <h3 class="work-heading">Our work</h3>
+
+                <div class="projects">
+                    <a
+                        href="https://docs.joinescape.org/notion-to-md?utm_source=joinescape.org&utm_medium=website&utm_campaign=our_work"
+                        class="project-card"
+                        aria-label="Notion to Markdown Converter - Seamlessly convert Notion pages to Markdown and other formats"
+                    >
+                        <div>
+                            <h4>Notion-to-md (Notion to anything)</h4>
+                            <p>
+                                Powerful Notion conversion engine that lets you
+                                write once in Notion and seamlessly publish
+                                anywhere, in any format
+                                (MD,MDX,JSX,PPT,HTML,LaTeX,etc)
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <svg
+                                class="external-icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                ></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </div>
+                    </a>
+                    <a
+                        href="https://github.com/join-escape/exporto-playground?utm_source=joinescape.org&utm_medium=website&utm_campaign=our_work"
+                        class="project-card"
+                        aria-label="Exporto Playground - Convert Notion pages to various formats with ease"
+                    >
+                        <div>
+                            <h4>Exporto Playground</h4>
+                            <p>
+                                A user-friendly interface for exporting Notion
+                                pages to various formats and to various
+                                destinations.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <svg
+                                class="external-icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                ></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <section class="team-section">
+                    <h2>Team</h2>
+                    <div class="team-list">
+                        <div class="team-member">
+                            <a
+                                href="https://github.com/souvikinator?utm_source=joinescape.org&utm_medium=website&utm_campaign=team"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                @souvikinator
+                                <svg
+                                    class="external-icon"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                    ></path>
+                                    <polyline
+                                        points="15 3 21 3 21 9"
+                                    ></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="team-member">
+                            <p>and all the open source contributors 💪</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; 2025 JoinEscape.org</p>
+            </footer>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
 </html>
